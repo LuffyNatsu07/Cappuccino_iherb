@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'main_page/screens/home/home.dart';
 import 'registration.dart';
 
@@ -18,12 +15,6 @@ class _State extends State<LoginPage> {
   TextEditingController password = TextEditingController();
   String token;
 
-  Future<void> log_in() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('token', token);
-    print('token saved');
-    print(prefs.get('token'));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,24 +85,25 @@ class _State extends State<LoginPage> {
                 textColor: Colors.white,
                 color: Colors.blueAccent,
                 child: Text('Login'),
-                onPressed: () async {
-                  final url = Uri.parse('http://192.168.137.1:5000/login');
-                  Map<String, String> headers = {
-                    "Content-type": "application/json"
-                  };
-                  String json = '{"email":"${login.text}",'
-                      '"password":"${password.text}"}';
-
-                  // make POST request
-                  Response response =
-                  await post(url, headers: headers, body: json);
-                  // check the status code for the result
-                  int statusCode = response.statusCode;
-                  // this API passes back the id of the new item added to the body
-                  String body = response.body;
-                  Map<String, dynamic> userToken = jsonDecode(body);
-                  token = userToken['token'];
-                  log_in();
+                onPressed: () {
+                // onPressed: () async {
+                  // final url = Uri.parse('http://192.168.137.1:5000/login');
+                  // Map<String, String> headers = {
+                  //   "Content-type": "application/json"
+                  // };
+                  // String json = '{"email":"${login.text}",'
+                  //     '"password":"${password.text}"}';
+                  //
+                  // // make POST request
+                  // Response response =
+                  // await post(url, headers: headers, body: json);
+                  // // check the status code for the result
+                  // int statusCode = response.statusCode;
+                  // // this API passes back the id of the new item added to the body
+                  // String body = response.body;
+                  // Map<String, dynamic> userToken = jsonDecode(body);
+                  // token = userToken['token'];
+                  // log_in();
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
