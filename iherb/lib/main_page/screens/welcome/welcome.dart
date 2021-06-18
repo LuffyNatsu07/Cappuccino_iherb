@@ -7,7 +7,7 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
 
-    void goToHomeScreen() => Navigator.pushReplacementNamed(context, "/home");
+    void goToHomeScreen() => Navigator.pushReplacementNamed(context, "/login");
 
     return Scaffold(
       body: SafeArea(

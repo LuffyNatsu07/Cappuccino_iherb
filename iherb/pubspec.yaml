@@ -38,6 +38,7 @@ dependencies:
   animated_widgets: ^1.0.6
   flutter_spinkit: "^4.1.2"
   shared_preferences: ^2.0.6
+  http: ^0.13.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
