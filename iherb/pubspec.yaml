@@ -36,6 +36,8 @@ dependencies:
   timezone: ^0.5.9
   animated_text_kit: ^2.5.3
   animated_widgets: ^1.0.6
+  flutter_spinkit: "^4.1.2"
+  shared_preferences: ^2.0.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
