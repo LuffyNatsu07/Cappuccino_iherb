@@ -81,7 +81,7 @@ class MedicineCard extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Delete ?"),
+              title: Text("Delete?"),
               content: Text("Are you sure to delete $medicineName medicine?"),
               contentTextStyle:
                   TextStyle(fontSize: 17.0, color: Colors.grey[800]),
