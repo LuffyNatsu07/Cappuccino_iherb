@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medicine/main_page/main_home_screen/main_home_screen.dart';
 import 'main_page/screens/add_new_medicine/add_new_medicine.dart';
 import 'main_page/screens/home/home.dart';
 import 'main_page/screens/welcome/welcome.dart';
-import 'login.dart';
-import 'registration.dart';
+import 'login_and_registration/login.dart';
+import 'navigation_buttons/profile.dart';
+import 'login_and_registration/registration.dart';
 
 void main() {
   runApp(MedicineApp());
@@ -44,6 +46,8 @@ class MedicineApp extends StatelessWidget {
         "/login": (context) => LoginPage(),
         "/registration": (context) => Registration(),
         "/add_new_medicine": (context) => AddNewMedicine(),
+        "/profile": (context) => Profile(),
+        "/main_home": (context) => MainHomeScreen()
       },
       initialRoute: "/",
     );

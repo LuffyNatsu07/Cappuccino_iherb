@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'main_page/screens/home/home.dart';
-import 'registration.dart';
+import 'package:medicine/main_page/main_home_screen/main_home_screen.dart';
 
+import 'registration.dart';
 
 class LoginPage extends StatefulWidget {
   static String id = 'login_page';
@@ -14,7 +14,6 @@ class _State extends State<LoginPage> {
   TextEditingController login = TextEditingController();
   TextEditingController password = TextEditingController();
   String token;
-
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +85,7 @@ class _State extends State<LoginPage> {
                 color: Colors.blueAccent,
                 child: Text('Login'),
                 onPressed: () {
-                // onPressed: () async {
+                  // onPressed: () async {
                   // final url = Uri.parse('http://192.168.137.1:5000/login');
                   // Map<String, String> headers = {
                   //   "Content-type": "application/json"
@@ -107,7 +106,7 @@ class _State extends State<LoginPage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => MainHomeScreen(),
                     ),
                   );
                   // {
@@ -118,29 +117,29 @@ class _State extends State<LoginPage> {
             ),
             Container(
                 child: Row(
-                  children: <Widget>[
-                    Text('Does not have account?'),
-                    FlatButton(
-                      textColor: Colors.blue,
-                      child: Text(
-                        'Registration',
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.blueAccent,
-                        ),
+              children: <Widget>[
+                Text('Does not have account?'),
+                FlatButton(
+                  textColor: Colors.blue,
+                  child: Text(
+                    'Registration',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.blueAccent,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Registration(),
                       ),
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Registration(),
-                          ),
-                        );
-                      },
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ))
+                    );
+                  },
+                )
+              ],
+              mainAxisAlignment: MainAxisAlignment.center,
+            ))
           ],
         ),
       ),
